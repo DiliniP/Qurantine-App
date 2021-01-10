@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "130249453451",
+    "project_id": "quarantine-app-1beb2",
+    "storage_bucket": "quarantine-app-1beb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130249453451:android:49cab5605cb76bd49c498e",
+        "android_client_info": {
+          "package_name": "com.example.qurantine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130249453451-j6fpi8ui1bnsi7jpja5k7qddb080afcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP_eRoJnn4y376-H4k9WcrcHSWrbWIzTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130249453451-j6fpi8ui1bnsi7jpja5k7qddb080afcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
