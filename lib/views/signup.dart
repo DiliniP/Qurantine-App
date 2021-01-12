@@ -4,6 +4,7 @@ import 'package:quizapp2/helper/constants.dart';
 import 'package:quizapp2/services/auth.dart';
 import 'package:quizapp2/services/database.dart';
 import 'package:quizapp2/views/home.dart';
+import 'package:quizapp2/views/signin.dart';
 import 'package:quizapp2/widget/widget.dart';
 
 class SignUp extends StatefulWidget {
@@ -43,7 +44,7 @@ class _SignUpState extends State<SignUp> {
         Constants.saveUserLoggedInSharedPreference(true);
 
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Home()));
+            context, MaterialPageRoute(builder: (context) => HomePage()));
       });
     }
   }
@@ -139,7 +140,8 @@ class _SignUpState extends State<SignUp> {
                                       color: Colors.black87, fontSize: 17)),
                               GestureDetector(
                                 onTap: () {
-                                  widget.toogleView();
+                                  // widget.toogleView();
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignIn()));
                                 },
                                 child: Container(
                                   child: Text('Sign In',
@@ -165,8 +167,6 @@ class _SignUpState extends State<SignUp> {
   }
 }
 
-Home() {
-}
 
 bool validateEmail(String value) {
   Pattern pattern =

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quizapp2/helper/authenticate.dart';
 import 'package:quizapp2/helper/constants.dart';
 import 'package:quizapp2/views/home.dart';
-import 'package:quizapp2/views/signup.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -34,14 +32,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       title: 'Qurantine Supervision App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: isUserLoggedIn ? Home() : Authenticate(),
+      home:  isUserLoggedIn ? HomePage() : Authenticate(),
     );
   }
 }
