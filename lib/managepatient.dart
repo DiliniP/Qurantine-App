@@ -39,7 +39,7 @@ class _ManagePatientState extends State<ManagePatient> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomePage())),
         ),

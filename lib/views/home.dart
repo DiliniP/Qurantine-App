@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp2/addpatient.dart';
+import 'package:quizapp2/allmisbehaviors.dart';
 import 'package:quizapp2/managepatient.dart';
 import 'package:quizapp2/misbehavior.dart';
 import 'package:quizapp2/trackpatient.dart';
@@ -37,6 +38,24 @@ children: [
   ),
   GestureDetector(
     onTap: (){
+      misbehavior();
+    },
+    child: Container(
+      margin: EdgeInsets.symmetric(vertical: 20.0),
+      padding: EdgeInsets.symmetric(vertical: 18),
+      decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(30)),
+      alignment: Alignment.center,
+      width: MediaQuery.of(context).size.width - 48,
+      child: Text(
+        "Add Misbehavior",
+        style: TextStyle(color: Colors.white, fontSize: 16),
+      ),
+    ),
+  ),
+  GestureDetector(
+    onTap: (){
       managePatient();
     },
     child: Container(
@@ -55,23 +74,25 @@ children: [
   ),
   GestureDetector(
     onTap: (){
+      allmisbehavior();
     },
     child: Container(
       margin: EdgeInsets.symmetric(vertical: 20.0),
       padding: EdgeInsets.symmetric(vertical: 18),
       decoration: BoxDecoration(
-          color: Colors.green,
+          color: Colors.redAccent,
           borderRadius: BorderRadius.circular(30)),
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width - 48,
       child: Text(
-        "Misbehavior",
+        "All Patient's Misbehavior",
         style: TextStyle(color: Colors.white, fontSize: 16),
       ),
     ),
   ),
   GestureDetector(
     onTap: (){
+      trackPatient();
     },
     child: Container(
       margin: EdgeInsets.symmetric(vertical: 20.0),
@@ -101,6 +122,9 @@ children: [
   }
   misbehavior() {
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Misbehavior()));
+  }
+  allmisbehavior() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> AllMisbehavior()));
   }
   trackPatient() {
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> TrackPatient()));
