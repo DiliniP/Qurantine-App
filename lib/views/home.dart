@@ -1,18 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:quizapp2/addpatient.dart';
 import 'package:quizapp2/allmisbehaviors.dart';
 import 'package:quizapp2/managepatient.dart';
 import 'package:quizapp2/misbehavior.dart';
 import 'package:quizapp2/trackpatient.dart';
+import 'package:quizapp2/widget/widget.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  signOut() async {
+    await auth.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text('Quarantine Supervision System'),
+        ),
+      actions: [
+        IconButton(
+            icon: Icon(Icons.logout), onPressed: (){
+          signOut();
+        })
+      ],
+        backgroundColor: Colors.green,
+      ),
       body: Container(
         width: double.infinity,
         child: Column(

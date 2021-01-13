@@ -66,102 +66,108 @@ class _SignUpState extends State<SignUp> {
             ? Container(
                 child: Center(child: CircularProgressIndicator()),
               )
-            : Column(
-                children: [
-                  Spacer(),
-                  Form(
-                    key: _formKey,
-                    child: Container(
-                      child: Column(
-                        children: [
-                          TextFormField(
-                            validator: (val) =>
-                                val.isEmpty ? "Enter an Name" : null,
-                            decoration: InputDecoration(hintText: "Name"),
-                            onChanged: (val) {
-                              name = val;
-                            },
-                          ),
-                          SizedBox(
-                            height: 6,
-                          ),
-                          TextFormField(
-                            validator: (val) => validateEmail(email)
-                                ? null
-                                : "Enter correct email",
-                            decoration: InputDecoration(hintText: "Email"),
-                            onChanged: (val) {
-                              email = val;
-                            },
-                          ),
-                          SizedBox(
-                            height: 6,
-                          ),
-                          TextFormField(
-                            obscureText: true,
-                            validator: (val) => val.length < 6
-                                ? "Password must be 6+ characters"
-                                : null,
-                            decoration: InputDecoration(hintText: "Password"),
-                            onChanged: (val) {
-                              password = val;
-                            },
-                          ),
-                          SizedBox(
-                            height: 24, //to give space
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              getInfoAndSignUp();
-                            },
-                            child: Container(
-                              alignment: Alignment.center,
-                              width: MediaQuery.of(context).size.width,
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 24, vertical: 20),
-                              decoration: BoxDecoration(
-                                  color: Colors.green,
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Text(
-                                "Sign Up",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text('Already have and account? ',
-                                  style: TextStyle(
-                                      color: Colors.black87, fontSize: 17)),
-                              GestureDetector(
-                                onTap: () {
-                                  // widget.toogleView();
-                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignIn()));
-                                },
-                                child: Container(
-                                  child: Text('Sign In',
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          decoration: TextDecoration.underline,
-                                          fontSize: 17)),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+            : SingleChildScrollView(
+              child: Column(
+                  children: [
+                    Container(
+                      child: Image(
+                        image: AssetImage('images/main_image.png'),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 80,
-                  )
-                ],
-              ),
+                    Form(
+                      key: _formKey,
+                      child: Container(
+                        child: Column(
+                          children: [
+                            TextFormField(
+                              validator: (val) =>
+                                  val.isEmpty ? "Enter an Name" : null,
+                              decoration: InputDecoration(hintText: "Name"),
+                              onChanged: (val) {
+                                name = val;
+                              },
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            TextFormField(
+                              validator: (val) => validateEmail(email)
+                                  ? null
+                                  : "Enter correct email",
+                              decoration: InputDecoration(hintText: "Email"),
+                              onChanged: (val) {
+                                email = val;
+                              },
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            TextFormField(
+                              obscureText: true,
+                              validator: (val) => val.length < 6
+                                  ? "Password must be 6+ characters"
+                                  : null,
+                              decoration: InputDecoration(hintText: "Password"),
+                              onChanged: (val) {
+                                password = val;
+                              },
+                            ),
+                            SizedBox(
+                              height: 24, //to give space
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                getInfoAndSignUp();
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: MediaQuery.of(context).size.width,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 24, vertical: 20),
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Text(
+                                  "Sign Up",
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.white),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('Already have and account? ',
+                                    style: TextStyle(
+                                        color: Colors.black87, fontSize: 17)),
+                                GestureDetector(
+                                  onTap: () {
+                                    // widget.toogleView();
+                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignIn()));
+                                  },
+                                  child: Container(
+                                    child: Text('Sign In',
+                                        style: TextStyle(
+                                            color: Colors.black87,
+                                            decoration: TextDecoration.underline,
+                                            fontSize: 17)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 80,
+                    )
+                  ],
+                ),
+            ),
       ),
     );
   }
